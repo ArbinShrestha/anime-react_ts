@@ -21,12 +21,17 @@ import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
+const Login = (): ReactJSXElement => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-
-const Login = ():ReactJSXElement => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
+
+  const handleLogin = () => {
+    console.log();
+  };
 
   return (
     <Flex
@@ -59,7 +64,12 @@ const Login = ():ReactJSXElement => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="email address"
+                  />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -71,6 +81,8 @@ const Login = ():ReactJSXElement => {
                   />
                   <Input
                     type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                   />
                   <InputRightElement width="4.5rem">
@@ -89,6 +101,7 @@ const Login = ():ReactJSXElement => {
                 variant="solid"
                 colorScheme="teal"
                 width="full"
+                onClick={handleLogin}
               >
                 Login
               </Button>

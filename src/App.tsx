@@ -5,7 +5,7 @@ import AnimeList from './components/AnimeList';
 function App() {
 
   const [search, setSearch]= useState('Naruto')
-  const [animeData, setAnimeData] = useState()
+  const [animeData, setAnimeData] = useState([])
 
   const getData = async () => {
     const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20`)
@@ -17,7 +17,7 @@ function App() {
     getData()
   },[search])
 
-
+  
   return (
     <>
       <div className="header">
@@ -35,7 +35,7 @@ function App() {
           <div className="anime-row">
             <h2 className="text-heading">Anime</h2>
             <div className="row">
-              <AnimeList />
+              <AnimeList animelist={animeData} />
             </div>
           </div>
       </div>

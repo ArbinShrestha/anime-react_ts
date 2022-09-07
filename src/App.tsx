@@ -1,46 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import AnimeList from './components/AnimeList';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import AnimeInfo from "./components/AnimeInfo";
+import AnimeList from "./components/AnimeList";
 
 function App() {
-
-  const [search, setSearch]= useState('Naruto')
-  const [animeData, setAnimeData] = useState([])
+  const [search, setSearch] = useState("Naruto");
+  const [animeData, setAnimeData] = useState([]);
+  const [animeInfo, setAnimeInfo] = useState();
 
   const getData = async () => {
-    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20`)
-    const resData = await res.json()
-    setAnimeData(resData.data)
-  }
+    const res = await fetch(
+      `https://api.jikan.moe/v4/anime?q=${search}&limit=20`
+    );
+    const resData = await res.json();
+    setAnimeData(resData.data);
+  };
 
-  useEffect(()=>{
-    getData()
-  },[search])
+  useEffect(() => {
+    getData();
+  }, [search]);
 
-  
   return (
     <>
+      {/* {console.log("animeinfooo>>>>>",animeInfo)}
+      {console.log("settttttttanimeinfooo>>>>>",setAnimeInfo)} */}
+
       <div className="header">
-      {/* <NavBar /> */}
-      <h1>MyAnimeList</h1>
-      <div className="search-box">
-        <input type="text" placeholder='Search your anime' onChange={(e)=>setSearch(e.target.value)}/>
-      </div>
+        {/* <NavBar /> */}
+        <h1>MyAnimeList</h1>
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search your anime"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
       </div>
 
+          {/* {console.log('asdfasdfas',animeInfo)} */}
       <div className="container">
         <div className="animeInfo">
-          
-        </div>
-          <div className="anime-row">
-            <h2 className="text-heading">Anime</h2>
-            <div className="row">
-              <AnimeList animelist={animeData} />
-            </div>
+          {animeInfo && <AnimeInfo animeinfo={animeInfo}  />}
           </div>
+        <div className="anime-row">
+          <h2 className="text-heading">Anime</h2>
+          <div className="row">
+            <AnimeList animelist={animeData} setanimeinfo={setAnimeInfo} />
+          </div>
+        </div>
       </div>
-     
-   
     </>
   );
 }

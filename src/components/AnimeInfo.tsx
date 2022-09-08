@@ -19,8 +19,6 @@ type animeinfoProps = {
 
  const AnimeInfo = (props: animeinfoProps):ReactJSXElement => {
   const { animeinfo }:animeinfoProps = props
-  // const {title,images,rank}:AnimeInfon = animeinfo
-  // const { anime }:AnimeInfo = props.animeinfo
 
   return (
     <>

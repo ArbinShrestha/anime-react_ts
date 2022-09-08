@@ -1,18 +1,23 @@
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 
-type AnimeLists = {
+export type AnimeLists = {
   images: { jpg: { large_image_url: string } },
   title: string;
+  title_japanese: string;
+  synopsis: string;
+
 };
 
 type animelistProps = {
   animelist: Array<AnimeLists>,
-  setanimeinfo: (value: any) => void  //change "any" state of setanimeinfo
-
+  setanimeinfo: Function  //change "any" state of setanimeinfo
+  animecomponent: Function
+  handlelist: Function
 };
 
 const AnimeList = (props: animelistProps): ReactJSXElement => {
-  const { animelist,setanimeinfo }:animelistProps = props;
+  const { animelist,setanimeinfo,animecomponent,handlelist }:animelistProps = props;
+  const AddToList =  animecomponent
   return (
     <>
       {animelist
@@ -32,8 +37,13 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
 
                 <div className="animeInfo">
                   <h4>{anime.title}</h4>
-                  <div className="overlay">
-                    
+                  <div className="overlay" onClick={()=>handlelist(anime)}>
+                    <h4>{anime.title_japanese}</h4>
+                    <h3>SYNOPSIS</h3>
+                    <div className="synopsis">
+                      <p>{anime.synopsis}</p>
+                    </div>
+                      <AddToList />
                   </div>
                 </div>
               </div>

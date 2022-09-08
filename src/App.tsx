@@ -1,12 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import AnimeInfo from "./components/AnimeInfo";
 import AnimeList from "./components/AnimeList";
+import AddToList from "./components/AddToList";
+import {AnimeLists} from "./components/AnimeList";
+import { RemoveFromList } from "./components/RemoveFromList";
 
 function App() {
   const [search, setSearch] = useState("Naruto");
   const [animeData, setAnimeData] = useState([]);
   const [animeInfo, setAnimeInfo] = useState();
+  const [myAnimeList, setMyAnimeList] = useState<AnimeLists[]>([])
+
+  const addTo = (anime:AnimeLists) => {
+    const newArray = [...myAnimeList, anime]
+    setMyAnimeList(newArray)
+  }
+
+  // const removeFrom = () => {
+  //   const 
+  // }
 
   const getData = async () => {
     const res = await fetch(
@@ -35,12 +48,24 @@ function App() {
       </div>
       <div className="container">
         <div className="animeInfo">
-          {animeInfo && <AnimeInfo animeinfo={animeInfo}  />}
-          </div>
+          {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
+        </div>
         <div className="anime-row">
           <h2 className="text-heading">Anime</h2>
           <div className="row">
-            <AnimeList animelist={animeData} setanimeinfo={setAnimeInfo} />
+            <AnimeList animelist={animeData} 
+            setanimeinfo={setAnimeInfo}
+            animecomponent={AddToList} 
+            handlelist={(anime: AnimeLists)=>addTo(anime)}
+            />
+          </div>
+          <h2 className="text-heading">My List</h2>
+          <div className="row">
+            <AnimeList animelist={myAnimeList} 
+            setanimeinfo={setAnimeInfo}
+            animecomponent={RemoveFromList} 
+            handlelist={(anime: AnimeLists)=>addTo(anime)}
+            />
           </div>
         </div>
       </div>

@@ -22,8 +22,7 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
               <div
                 className="card"
                 key={index}
-                onClick={()=>setanimeinfo(anime)}
-                
+                onClick={()=>setanimeinfo(anime)}                
               >
                 <img
                   src={anime.images.jpg.large_image_url}
@@ -33,6 +32,9 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
 
                 <div className="animeInfo">
                   <h4>{anime.title}</h4>
+                  <div className="overlay">
+                    
+                  </div>
                 </div>
               </div>
             );

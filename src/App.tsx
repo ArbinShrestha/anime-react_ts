@@ -22,9 +22,6 @@ function App() {
 
   return (
     <>
-      {/* {console.log("animeinfooo>>>>>",animeInfo)}
-      {console.log("settttttttanimeinfooo>>>>>",setAnimeInfo)} */}
-
       <div className="header">
         {/* <NavBar /> */}
         <h1>MyAnimeList</h1>
@@ -36,8 +33,6 @@ function App() {
           />
         </div>
       </div>
-
-          {/* {console.log('asdfasdfas',animeInfo)} */}
       <div className="container">
         <div className="animeInfo">
           {animeInfo && <AnimeInfo animeinfo={animeInfo}  />}

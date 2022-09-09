@@ -43,7 +43,7 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
                     <div className="synopsis">
                       <p>{anime.synopsis}</p>
                     </div>
-                      <AddToList />
+                      <AddToList  />
                   </div>
                 </div>
               </div>

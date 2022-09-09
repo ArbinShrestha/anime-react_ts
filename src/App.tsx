@@ -13,13 +13,21 @@ function App() {
   const [myAnimeList, setMyAnimeList] = useState<AnimeLists[]>([])
 
   const addTo = (anime:AnimeLists) => {
-    const newArray = [...myAnimeList, anime]
-    setMyAnimeList(newArray)
+    const index = myAnimeList.findIndex((myanime)=>{
+      return myanime.mal_id === anime.mal_id
+    })
+    if(index < 0){
+      const newArray = [...myAnimeList, anime]
+      setMyAnimeList(newArray)
+    }    
   }
 
-  // const removeFrom = () => {
-  //   const 
-  // }
+  const removeFrom = (anime:AnimeLists) => {
+    const newArray = myAnimeList.filter((myanime)=>{
+      return myanime.mal_id !== anime.mal_id
+    })
+    setMyAnimeList(newArray)
+  }
 
   const getData = async () => {
     const res = await fetch(
@@ -64,7 +72,7 @@ function App() {
             <AnimeList animelist={myAnimeList} 
             setanimeinfo={setAnimeInfo}
             animecomponent={RemoveFromList} 
-            handlelist={(anime: AnimeLists)=>addTo(anime)}
+            handlelist={(anime: AnimeLists)=>removeFrom(anime)}
             />
           </div>
         </div>

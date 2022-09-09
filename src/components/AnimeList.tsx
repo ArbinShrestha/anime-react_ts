@@ -5,7 +5,7 @@ export type AnimeLists = {
   title: string;
   title_japanese: string;
   synopsis: string;
-
+  mal_id: number
 };
 
 type animelistProps = {

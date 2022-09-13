@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import "./App.css";
 import AnimeInfo from "./components/AnimeInfo";
 import AnimeList from "./components/AnimeList";
 import AddToList from "./components/AddToList";
 import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
+import Container from 'react-bootstrap/Container';
+import Navbars from "./components/Navbars";
+
 
 function App() {
   const [search, setSearch] = useState("");
@@ -12,7 +15,7 @@ function App() {
   const [animeInfo, setAnimeInfo] = useState();
   const [myAnimeList, setMyAnimeList] = useState<AnimeLists[]>([]);
 
-  const addTo = (anime: AnimeLists) => {
+  const addTo: Function = (anime: AnimeLists): void => {
     const index = myAnimeList.findIndex((myanime) => {
       return myanime.mal_id === anime.mal_id;
     });
@@ -22,7 +25,7 @@ function App() {
     }
   };
 
-  const removeFrom = (anime: AnimeLists) => {
+  const removeFrom: Function = (anime: AnimeLists): void => {
     const newArray = myAnimeList.filter((myanime) => {
       return myanime.mal_id !== anime.mal_id;
     });
@@ -43,9 +46,7 @@ function App() {
 
   return (
     <>
-      <div className="header">
-        {/* <NavBar /> */}
-        <h1>MyAnimeList</h1>
+      <Navbars />
         <div className="search-box">
           <input
             type="text"
@@ -53,8 +54,8 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-      </div>
-      <div className="container">
+    
+     <Container>
         <div className="animeInfo">
           {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
         </div>
@@ -78,7 +79,7 @@ function App() {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 }

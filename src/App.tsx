@@ -7,6 +7,7 @@ import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
 import Container from 'react-bootstrap/Container';
 import Navbars from "./components/Navbars";
+import Cards from "./components/Cards";
 
 
 function App() {
@@ -59,16 +60,18 @@ function App() {
         <div className="animeInfo">
           {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
         </div>
-        <div className="anime-row">
-          <h2 className="text-heading">Anime</h2>
-          <div className="row">
+        {/* <div className="anime-row">
+          <h2 className="text-heading">Anime</h2> */}
+          <Cards>
+          {/* <div className="row"> */}
             <AnimeList
               animelist={animeData}
               setanimeinfo={setAnimeInfo}
               animecomponent={AddToList}
               handlelist={(anime: AnimeLists) => addTo(anime)}
             />
-          </div>
+          {/* </div> */}
+          </Cards>
           <h2 className="text-heading">My List</h2>
           <div className="row">
             <AnimeList
@@ -78,7 +81,7 @@ function App() {
               handlelist={(anime: AnimeLists) => removeFrom(anime)}
             />
           </div>
-        </div>
+        {/* </div> */}
       </Container>
     </>
   );

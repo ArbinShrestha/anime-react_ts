@@ -47,14 +47,14 @@ function App() {
 
   return (
     <>
-      <Navbars />
-        <div className="search-box">
+      <Navbars setSearch={setSearch}/>
+        {/* <div className="search-box">
           <input
             type="text"
             placeholder="Search your anime"
             onChange={(e) => setSearch(e.target.value)}
           />
-        </div>
+        </div> */}
     
      <Container>
         <div className="animeInfo">

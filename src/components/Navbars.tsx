@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import {Navbar, Container, Nav, Form, Button} from 'react-bootstrap'
 
+type clickProp = {
+  setSearch: Function
+}
 
+const Navbars = (props:clickProp) => {
 
-const Navbars = () => {
+    const {setSearch} = props;
 
-  // const [, setSearch] = useState("");
-
-    
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -25,8 +26,10 @@ const Navbars = () => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
+            
+            {/* <Button variant="outline-success">Search</Button> */}
         </Form>
       </Container>
     </Navbar>

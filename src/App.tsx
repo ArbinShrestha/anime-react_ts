@@ -7,11 +7,15 @@ import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
 import Container from 'react-bootstrap/Container';
 import Navbars from "./components/Navbars";
-import Cards from "./components/Cards";
+import Popovers from "./components/Popovers";
+import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+
 
 
 function App() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("Naruto");
   const [animeData, setAnimeData] = useState([]);
   const [animeInfo, setAnimeInfo] = useState();
   const [myAnimeList, setMyAnimeList] = useState<AnimeLists[]>([]);
@@ -35,7 +39,7 @@ function App() {
 
   const getData = async () => {
     const res = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${search}&limit=20`
+      `https://api.jikan.moe/v4/anime?q=${search}&limit=15`
     );
     const resData = await res.json();
     setAnimeData(resData.data);
@@ -44,6 +48,7 @@ function App() {
   useEffect(() => {
     getData();
   }, [search]);
+
 
   return (
     <>
@@ -56,24 +61,33 @@ function App() {
           />
         </div> */}
     
-     <Container>
-        <div className="animeInfo">
+     <Container
+      style={{padding: '10px'}}
+     >
+        {/* <div className="animeInfo">
           {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
-        </div>
+        </div> */}
         {/* <div className="anime-row">
           <h2 className="text-heading">Anime</h2> */}
-          <Cards>
           {/* <div className="row"> */}
+          {/* <h2>Anime List</h2>   
+            <AnimeList
+              animelist={animeData}
+              setanimeinfo={setAnimeInfo}
+              animecomponent={AddToList}
+              handlelist={(anime: AnimeLists) => addTo(anime)}
+            /> */}
+          <h2>Anime List</h2>   
             <AnimeList
               animelist={animeData}
               setanimeinfo={setAnimeInfo}
               animecomponent={AddToList}
               handlelist={(anime: AnimeLists) => addTo(anime)}
             />
+
           {/* </div> */}
-          </Cards>
           <h2 className="text-heading">My List</h2>
-          <div className="row">
+          <div>
             <AnimeList
               animelist={myAnimeList}
               setanimeinfo={setAnimeInfo}
@@ -81,6 +95,9 @@ function App() {
               handlelist={(anime: AnimeLists) => removeFrom(anime)}
             />
           </div>
+          <div>
+          {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
+        </div>
         {/* </div> */}
       </Container>
     </>

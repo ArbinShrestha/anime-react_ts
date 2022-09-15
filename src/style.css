@@ -21824,4 +21824,19 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.navbar-brand {
+  color: white;
+}
+
+.row {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  overflow: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
 }/*# sourceMappingURL=style.css.map */

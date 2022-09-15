@@ -22,14 +22,25 @@ $primary: #000000;
   overflow-y: hidden;
 }
 
-.row {
-    position: relative;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-  }
+// .row {
+//     position: relative;
+//     opacity: 1;
+//     transition: .5s ease;
+//     background-color: #008CBA;
+//   }
   
-  .container:hover .row {
-    opacity: 1;
-  }
+//   .container:hover .row {
+//     opacity: 1;
+//   }
+.card{
+
+  transition: all 0.2s ease;
+  cursor: pointer;
   
+
+}
+  
+.card:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
+}

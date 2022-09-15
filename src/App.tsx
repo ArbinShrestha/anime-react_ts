@@ -7,14 +7,7 @@ import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
 import Container from 'react-bootstrap/Container';
 import Navbars from "./components/Navbars";
-<<<<<<< HEAD
-=======
-import Popovers from "./components/Popovers";
-import Button from 'react-bootstrap/Button';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Popover from 'react-bootstrap/Popover';
 import TriggerExample from "./components/TriggerExample";
->>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
 
 
 
@@ -66,24 +59,15 @@ function App() {
           />
         </div> */}
     
-<<<<<<< HEAD
-     <Container>
-        {/* <div className="animeInfo">
-          {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
-=======
      <Container
       style={{padding: '10px'}}
      >
        {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
         {/* <div className="animeInfo">
->>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
         </div> */}
         {/* <div className="anime-row">
           <h2 className="text-heading">Anime</h2> */}
           {/* <div className="row"> */}
-<<<<<<< HEAD
-         
-=======
           {/* <h2>Anime List</h2>   
             <AnimeList
               animelist={animeData}
@@ -92,7 +76,6 @@ function App() {
               handlelist={(anime: AnimeLists) => addTo(anime)}
             /> */}
           <h2>Anime List</h2>   
->>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
             <AnimeList
               // animeinfo={animeInfo}
               animelist={animeData}
@@ -100,11 +83,6 @@ function App() {
               animecomponent={AddToList}
               handlelist={(anime: AnimeLists) => addTo(anime)}
             />
-<<<<<<< HEAD
-           
-=======
-
->>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
           {/* </div> */}
           <h2 className="text-heading">My List</h2>
           <div>
@@ -122,7 +100,8 @@ function App() {
             </OverlayTrigger>
           } */}
           <TriggerExample />
-          {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
+          
+          {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
         
       </Container>
     </>

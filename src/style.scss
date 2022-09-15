@@ -12,13 +12,24 @@ $primary: #000000;
 }
 
 .row{
-    height: auto;
+  height: auto;
   width: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   position: relative;
-  overflow: scroll;
-  scroll-snap-type: x mandatory;
+  overflow: auto;
+  overflow-y: hidden;
 }
 
+.row {
+    position: relative;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  
+  .container:hover .row {
+    opacity: 1;
+  }
+  

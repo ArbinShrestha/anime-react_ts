@@ -21836,7 +21836,17 @@ textarea.form-control-lg {
   flex-direction: row;
   flex-wrap: nowrap;
   position: relative;
-  overflow: scroll;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.row {
+  position: relative;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .row {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace"
-import { Card, Row,Col } from "react-bootstrap"
+import { Popover,OverlayTrigger,Button, Row,Col,Card } from "react-bootstrap"
 
 type AnimeInfon = {
   title:  string,
@@ -22,7 +22,7 @@ type animeinfoProps = {
   const { animeinfo }:animeinfoProps = props
 
   return (
-    <>
+    <>    
       <Row>
         <Col xd={5} md={3}>
           <Card>

@@ -1,6 +1,3 @@
-import { render } from '@testing-library/react';
-import Button from 'react-bootstrap/Button';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
 const popover = () => (
@@ -13,13 +10,5 @@ const popover = () => (
   </Popover>
 );
 
-const Example = () => (
-  <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-    <Button variant="success">Click me to see</Button>
-  </OverlayTrigger>
-);
 
-render(<Example/>)
-
-
-export default {popover, Example};
+export default popover;

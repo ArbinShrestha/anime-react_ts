@@ -1,5 +1,6 @@
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
-import { Card, Button, Row,Col} from 'react-bootstrap'
+import { Card, Button, Row,Col,Container,Popover, OverlayTrigger} from 'react-bootstrap'
+import AnimeInfo from "./AnimeInfo";
 
 
 export type AnimeLists = {
@@ -15,37 +16,54 @@ type animelistProps = {
   setanimeinfo: Function  
   animecomponent: Function
   handlelist: Function
+  // animeinfo: any
 };
+
 
 const AnimeList = (props: animelistProps): ReactJSXElement => {
   const { animelist,setanimeinfo,animecomponent, handlelist }:animelistProps = props;
   const AddToList =  animecomponent
+  // const popover = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Header as="h3">Popover right</Popover.Header>
+  //     <Popover.Body>
+  //       <AnimeInfo animeinfo={animeinfo} />
+  //     </Popover.Body>
+  //   </Popover>
+  // );
   return (
     <>
+    <Container >
    <Row>   
       {animelist
       ? animelist.map((anime: AnimeLists, index) => {
           return (
+            
           <Col xd={5} md={3} >
+            {/* <OverlayTrigger trigger="click" placement="right" overlay={popover}> */}
             <Card 
-              key={index}              
+              key={index}    
+              onClick={()=>setanimeinfo(anime)}
+                       
               >
                 <Card.Img  src={anime.images.jpg.large_image_url} alt="animeImage" />
                 <Card.Body >
-                  <Card.Title>Naruto</Card.Title>
+                  <Card.Title>{anime.title}</Card.Title>
                   <Card.Text>
                     <p>Anime Details</p>
                   </Card.Text>
                   <Button onClick={()=>handlelist(anime)}  variant="primary"><AddToList /></Button>
                 </Card.Body>
-            </Card>   
+            </Card>  
+            {/* </OverlayTrigger> */}
           </Col>  
+            
           );
           
         })
         : "Not found"}  
         </Row>              
-      
+        </Container>
        
     </>
   );

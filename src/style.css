@@ -21824,4 +21824,29 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.navbar-brand {
+  color: white;
+}
+
+.row {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.row {
+  position: relative;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .row {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

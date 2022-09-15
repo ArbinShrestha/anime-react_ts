@@ -7,6 +7,14 @@ import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
 import Container from 'react-bootstrap/Container';
 import Navbars from "./components/Navbars";
+<<<<<<< HEAD
+=======
+import Popovers from "./components/Popovers";
+import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+import TriggerExample from "./components/TriggerExample";
+>>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
 
 
 
@@ -35,7 +43,7 @@ function App() {
 
   const getData = async () => {
     const res = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${search}&limit=20`
+      `https://api.jikan.moe/v4/anime?q=${search}&limit=15`
     );
     const resData = await res.json();
     setAnimeData(resData.data);
@@ -45,43 +53,77 @@ function App() {
     getData();
   }, [search]);
 
+  
+
   return (
     <>
-      <Navbars />
-        <div className="search-box">
+      <Navbars setSearch={setSearch}/>
+        {/* <div className="search-box">
           <input
             type="text"
             placeholder="Search your anime"
             onChange={(e) => setSearch(e.target.value)}
           />
-        </div>
+        </div> */}
     
+<<<<<<< HEAD
      <Container>
         {/* <div className="animeInfo">
           {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
+=======
+     <Container
+      style={{padding: '10px'}}
+     >
+       {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
+        {/* <div className="animeInfo">
+>>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
         </div> */}
         {/* <div className="anime-row">
           <h2 className="text-heading">Anime</h2> */}
           {/* <div className="row"> */}
+<<<<<<< HEAD
          
+=======
+          {/* <h2>Anime List</h2>   
             <AnimeList
               animelist={animeData}
               setanimeinfo={setAnimeInfo}
               animecomponent={AddToList}
               handlelist={(anime: AnimeLists) => addTo(anime)}
+            /> */}
+          <h2>Anime List</h2>   
+>>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
+            <AnimeList
+              // animeinfo={animeInfo}
+              animelist={animeData}
+              setanimeinfo={setAnimeInfo}
+              animecomponent={AddToList}
+              handlelist={(anime: AnimeLists) => addTo(anime)}
             />
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> 050cb8035d1f86ed9287b5f950c96bbcefc1b3ad
           {/* </div> */}
           <h2 className="text-heading">My List</h2>
-          <div className="row">
+          <div>
             <AnimeList
+              // animeinfo={animeInfo}
               animelist={myAnimeList}
               setanimeinfo={setAnimeInfo}
               animecomponent={RemoveFromList}
               handlelist={(anime: AnimeLists) => removeFrom(anime)}
             />
           </div>
-        {/* </div> */}
+          {/* {animeInfo && 
+            <OverlayTrigger trigger='click' placement='right' overlay={popover} >
+              <AnimeInfo animeinfo={animeInfo} />
+            </OverlayTrigger>
+          } */}
+          <TriggerExample />
+          {animeInfo && <AnimeInfo animeinfo={animeInfo} />}
+        
       </Container>
     </>
   );

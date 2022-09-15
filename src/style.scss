@@ -7,3 +7,29 @@ $primary: #000000;
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
 
+.navbar-brand{
+    color: white;
+}
+
+.row{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.row {
+    position: relative;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  
+  .container:hover .row {
+    opacity: 1;
+  }
+  

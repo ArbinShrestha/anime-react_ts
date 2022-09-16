@@ -26,6 +26,7 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
     handlelist,
     animeinfo,
   }: animelistProps = props;
+  
   const AddToList = animecomponent;
 
   return (

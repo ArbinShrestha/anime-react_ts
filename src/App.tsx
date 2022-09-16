@@ -7,6 +7,7 @@ import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
 import Container from "react-bootstrap/Container";
 import Navbars from "./components/Navbars";
+// import Carousels from "./components/Carousels";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -33,7 +34,7 @@ function App() {
 
   const getData = async () => {
     const res = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${search}&limit=15`
+      `https://api.jikan.moe/v4/anime?q=${search}&sfw`
     );
     const resData = await res.json();
     setAnimeData(resData.data);
@@ -46,6 +47,8 @@ function App() {
   return (
     <>
       <Navbars setSearch={setSearch} />
+
+      {/* <Carousels /> */}
 
       <Container style={{ padding: "10px" }}>
       

@@ -1,13 +1,9 @@
-
-
 const AddToList = () => {
   return (
-        <>
-            
-                <p>Add To List+</p>
-           
-        </>
-    )
-}
+    <>
+      Add To List+
+    </>
+  );
+};
 
-export default AddToList
+export default AddToList;

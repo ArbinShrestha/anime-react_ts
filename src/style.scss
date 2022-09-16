@@ -5,13 +5,13 @@ $body-color: black;
 $font-family-sans-serif: "Josefin Sans", sans-serif;
 $primary: #000000;
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap");
 
-.navbar-brand{
-    color: white;
+.navbar-brand {
+  color: white;
 }
 
-.row{
+.row {
   height: auto;
   width: auto;
   display: flex;
@@ -22,25 +22,32 @@ $primary: #000000;
   overflow-y: hidden;
 }
 
-// .row {
-//     position: relative;
-//     opacity: 1;
-//     transition: .5s ease;
-//     background-color: #008CBA;
-//   }
-  
-//   .container:hover .row {
-//     opacity: 1;
-//   }
-.card{
-
+.card {
   transition: all 0.2s ease;
   cursor: pointer;
-  
-
 }
-  
+
 .card:hover {
-    box-shadow: 5px 6px 6px 2px #e9ecef;
-    transform: scale(1.1);
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  transform: scale(1.1);
+}
+
+.anime-info {
+  position: absolute;
+  color: #fff;
+  top: 0;
+  left: 0;
+  height: auto;
+  opacity: 0;
+  // transform: translate(0px, 70px);
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.card-img:hover {
+  filter: blur(8px);
+}
+
+.card:hover .anime-info {
+  opacity: 1;
 }

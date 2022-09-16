@@ -5,11 +5,8 @@ import AnimeList from "./components/AnimeList";
 import AddToList from "./components/AddToList";
 import { AnimeLists } from "./components/AnimeList";
 import { RemoveFromList } from "./components/RemoveFromList";
-import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/Container";
 import Navbars from "./components/Navbars";
-import TriggerExample from "./components/TriggerExample";
-
-
 
 function App() {
   const [search, setSearch] = useState("");
@@ -46,63 +43,34 @@ function App() {
     getData();
   }, [search]);
 
-  
-
   return (
     <>
-      <Navbars setSearch={setSearch}/>
-        {/* <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search your anime"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div> */}
-    
-     <Container
-      style={{padding: '10px'}}
-     >
-       {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
-        {/* <div className="animeInfo">
-        </div> */}
-        {/* <div className="anime-row">
-          <h2 className="text-heading">Anime</h2> */}
-          {/* <div className="row"> */}
-          {/* <h2>Anime List</h2>   
-            <AnimeList
-              animelist={animeData}
-              setanimeinfo={setAnimeInfo}
-              animecomponent={AddToList}
-              handlelist={(anime: AnimeLists) => addTo(anime)}
-            /> */}
-          <h2>Anime List</h2>   
-            <AnimeList
-              // animeinfo={animeInfo}
-              animelist={animeData}
-              setanimeinfo={setAnimeInfo}
-              animecomponent={AddToList}
-              handlelist={(anime: AnimeLists) => addTo(anime)}
-            />
-          {/* </div> */}
-          <h2 className="text-heading">My List</h2>
-          <div>
-            <AnimeList
-              // animeinfo={animeInfo}
-              animelist={myAnimeList}
-              setanimeinfo={setAnimeInfo}
-              animecomponent={RemoveFromList}
-              handlelist={(anime: AnimeLists) => removeFrom(anime)}
-            />
-          </div>
-          {/* {animeInfo && 
-            <OverlayTrigger trigger='click' placement='right' overlay={popover} >
-              <AnimeInfo animeinfo={animeInfo} />
-            </OverlayTrigger>
-          } */}
-          <TriggerExample />
-          
-          {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
+      <Navbars setSearch={setSearch} />
+
+      <Container style={{ padding: "10px" }}>
+      
+        <h2>Anime List</h2>
+        <AnimeList
+          animeinfo={animeInfo}
+          animelist={animeData}
+          setanimeinfo={setAnimeInfo}
+          animecomponent={AddToList}
+          handlelist={(anime: AnimeLists) => addTo(anime)}
+        />
+
+        <h2 className="text-heading">My List</h2>
         
+        <div>
+           {myAnimeList.length > 0 ? (<AnimeList
+            animeinfo={animeInfo}
+            animelist={myAnimeList}
+            setanimeinfo={setAnimeInfo}
+            animecomponent={RemoveFromList}
+            handlelist={(anime: AnimeLists) => removeFrom(anime)}
+          />) : "No Anime in my list"}
+        </div>
+
+        {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
       </Container>
     </>
   );

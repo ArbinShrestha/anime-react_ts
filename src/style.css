@@ -21840,13 +21840,31 @@ textarea.form-control-lg {
   overflow-y: hidden;
 }
 
-.row {
-  position: relative;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: #008CBA;
+.card {
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.container:hover .row {
+.card:hover {
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  transform: scale(1.1);
+}
+
+.anime-info {
+  position: absolute;
+  color: #fff;
+  top: 0;
+  left: 0;
+  height: auto;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.card-img:hover {
+  filter: blur(8px);
+}
+
+.card:hover .anime-info {
   opacity: 1;
 }/*# sourceMappingURL=style.css.map */

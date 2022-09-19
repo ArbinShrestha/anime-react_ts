@@ -1,6 +1,6 @@
 import { SetStateAction, useEffect, useState } from "react";
 import "./App.css";
-import AnimeInfo from "./components/AnimeInfo";
+// import AnimeInfo from "./components/AnimeInfo";
 import AnimeList from "./components/AnimeList";
 import AddToList from "./components/AddToList";
 import { AnimeLists } from "./components/AnimeList";

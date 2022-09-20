@@ -9,7 +9,7 @@ const Navbars = (props:clickProp) => {
     const {setSearch} = props;
 
   return (
-    <Navbar bg="dark" expand="lg" >
+    <Navbar style={{position: 'absolute'}}bg="dark" expand="lg" >
       <Container>
         <Navbar.Brand href="/">My Anime List</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

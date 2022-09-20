@@ -1,6 +1,6 @@
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { Card, Button, Row, Col, Container } from "react-bootstrap";
-import AnimeInfo from "./AnimeInfo";
+import AnimeInfo from "../AnimeInfo";
 
 export type AnimeLists = {
   images: { jpg: { large_image_url: string } };
@@ -26,7 +26,7 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
     handlelist,
     animeinfo,
   }: animelistProps = props;
-  
+
   const AddToList = animecomponent;
 
   return (
@@ -72,27 +72,3 @@ const AnimeList = (props: animelistProps): ReactJSXElement => {
 };
 
 export default AnimeList;
-
-// <div
-//   className="card"
-//   key={index}
-//   onClick={()=>setanimeinfo(anime)}
-// >
-//   <img
-//     src={anime.images.jpg.large_image_url}
-//     alt="animeImage"
-//     className="src"
-//   />
-
-//   <div className="animeInfo">
-//     <h4>{anime.title}</h4>
-//     <div className="overlay" onClick={()=>handlelist(anime)}>
-//       <h4>{anime.title_japanese}</h4>
-//       <h3>SYNOPSIS</h3>
-//       <div className="synopsis">
-//         <p>{anime.synopsis}</p>
-//       </div>
-//         <AddToList  />
-//     </div>
-//   </div>
-// </div>

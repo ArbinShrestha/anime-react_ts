@@ -1,13 +1,11 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-// import AnimeInfo from "./components/AnimeInfo";
-import AnimeList from "./components/AnimeList";
-import AddToList from "./components/AddToList";
-import { AnimeLists } from "./components/AnimeList";
-import { RemoveFromList } from "./components/RemoveFromList";
+import AnimeList from "./components/ListComponent/AnimeList";
+import AddToList from "./components/ListComponent/AddToList";
+import { AnimeLists } from "./components/ListComponent/AnimeList";
+import { RemoveFromList } from "./components/ListComponent/RemoveFromList";
 import Container from "react-bootstrap/Container";
-import Navbars from "./components/Navbars";
-// import Carousels from "./components/Carousels";
+import Navbars from "./components/MainComponent/Navbars";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -33,9 +31,7 @@ function App() {
   };
 
   const getData = async () => {
-    const res = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${search}&sfw`
-    );
+    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&sfw`);
     const resData = await res.json();
     setAnimeData(resData.data);
   };
@@ -48,10 +44,7 @@ function App() {
     <>
       <Navbars setSearch={setSearch} />
 
-      {/* <Carousels /> */}
-
       <Container style={{ padding: "10px" }}>
-      
         <h2>Anime List</h2>
         <AnimeList
           animeinfo={animeInfo}
@@ -62,18 +55,20 @@ function App() {
         />
 
         <h2 className="text-heading">My List</h2>
-        
-        <div>
-           {myAnimeList.length > 0 ? (<AnimeList
-            animeinfo={animeInfo}
-            animelist={myAnimeList}
-            setanimeinfo={setAnimeInfo}
-            animecomponent={RemoveFromList}
-            handlelist={(anime: AnimeLists) => removeFrom(anime)}
-          />) : "No Anime in my list"}
-        </div>
 
-        {/* {animeInfo && <AnimeInfo animeinfo={animeInfo} />} */}
+        <div>
+          {myAnimeList.length > 0 ? (
+            <AnimeList
+              animeinfo={animeInfo}
+              animelist={myAnimeList}
+              setanimeinfo={setAnimeInfo}
+              animecomponent={RemoveFromList}
+              handlelist={(anime: AnimeLists) => removeFrom(anime)}
+            />
+          ) : (
+            "No Anime in my list"
+          )}
+        </div>
       </Container>
     </>
   );

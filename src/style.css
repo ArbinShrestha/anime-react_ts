@@ -21868,4 +21868,34 @@ textarea.form-control-lg {
 
 .card:hover .anime-info {
   opacity: 1;
+}
+
+.navbar {
+  position: absolute;
+  background: transparent !important;
+  width: 100%;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar a {
+  color: black;
+}
+
+.search-bar {
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  width: 100%;
+}
+
+#bg {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel {
+  position: absolute;
+  padding: 205px;
 }/*# sourceMappingURL=style.css.map */

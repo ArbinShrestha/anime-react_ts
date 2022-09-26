@@ -6,6 +6,9 @@ import { AnimeLists } from "./components/ListComponent/AnimeList";
 import { RemoveFromList } from "./components/ListComponent/RemoveFromList";
 import Container from "react-bootstrap/Container";
 import Navbars from "./components/MainComponent/Navbars";
+import Navbars_test from "./components/MainComponent/Navbars_test";
+import Searchbar from "./components/MainComponent/Searchbar";
+import { Carousel } from "react-bootstrap";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -42,7 +45,24 @@ function App() {
 
   return (
     <>
-      <Navbars setSearch={setSearch} />
+      <Navbars_test />
+      <br /> 
+      <Searchbar />
+      <br />
+      <Carousel />
+      {/* <Navbars setSearch={setSearch} /> */}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+
 
       <Container style={{ padding: "10px" }}>
         <h2>Anime List</h2>

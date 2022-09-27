@@ -87,3 +87,11 @@ $primary: #000000;
   position: absolute;
   padding: 205px;
 }
+
+.mainComponent{
+  height: 90vh!important;
+  background-image: url('../public/anime/3.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

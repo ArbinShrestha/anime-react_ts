@@ -9,6 +9,8 @@ import Navbars from "./components/MainComponent/Navbars";
 import Navbars_test from "./components/MainComponent/Navbars_test";
 import Searchbar from "./components/MainComponent/Searchbar";
 import { Carousel } from "react-bootstrap";
+import AnimeImages from "./anime/1.jpg"
+import MainComponent from "./components/MainComponent";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -45,22 +47,10 @@ function App() {
 
   return (
     <>
-      <Navbars_test />
-      <br /> 
-      <Searchbar />
-      <br />
-      <Carousel />
+    {/* <img src={'/anime/3.jpg'} id="bg" className="w-100" alt="" /> */}
+     <MainComponent />
       {/* <Navbars setSearch={setSearch} /> */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      
 
 
 

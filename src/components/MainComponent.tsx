@@ -5,15 +5,14 @@ import Searchbar from "./MainComponent/Searchbar"
 
 const MainComponent = () => {
   return (         
-         <>
-         <img src={'/anime/3.jpg'} id="bg" className="w-100" alt="" />
+         <div className="mainComponent">
             <Navbars_test />
             <br /> 
             <Searchbar />
             <br/>
             <Carousel />
             <br />
-        </>
+         </div>
         
     )
 }

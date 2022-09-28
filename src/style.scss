@@ -68,7 +68,7 @@ $primary: #000000;
   border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 .navbar a {
-  color: black;     
+  color: white;     
 }
 .search-bar{
   position:absolute;
@@ -86,10 +86,16 @@ $primary: #000000;
 .carousel{
   position: absolute;
   padding: 205px;
+  top: 0px;
+}
+
+.carousel-inner{
+  border-radius: 20px;
 }
 
 .mainComponent{
-  height: 90vh!important;
+  
+  height: 110vh!important;
   background-image: url('../public/anime/3.jpg');
   background-position: center;
   background-size: cover;

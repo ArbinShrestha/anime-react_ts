@@ -49,6 +49,8 @@ function App() {
     <>
     {/* <img src={'/anime/3.jpg'} id="bg" className="w-100" alt="" /> */}
      <MainComponent />
+      <br />
+
       {/* <Navbars setSearch={setSearch} /> */}
       
 

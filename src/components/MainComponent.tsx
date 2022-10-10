@@ -12,6 +12,7 @@ const MainComponent = () => {
             <br/>
             <Carousel />
             <br />
+            
          </div>
         
     )

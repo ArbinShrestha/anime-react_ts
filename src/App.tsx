@@ -47,15 +47,9 @@ function App() {
 
   return (
     <>
-    {/* <img src={'/anime/3.jpg'} id="bg" className="w-100" alt="" /> */}
      <MainComponent />
       <br />
-
       {/* <Navbars setSearch={setSearch} /> */}
-      
-
-
-
       <Container style={{ padding: "10px" }}>
         <h2>Anime List</h2>
         <AnimeList

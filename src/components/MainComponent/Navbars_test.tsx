@@ -1,5 +1,5 @@
-
-
+import { Outlet, Link, Route,Routes} from "react-router-dom";
+import Anime from "../../pages/anime"
 const Navbars_test = () => {
   return (
 
@@ -16,10 +16,14 @@ const Navbars_test = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/anime">Anime</a>
+               <Routes>
+                  <Route path="../../pages/anime" element={<Anime />} />
+                   <Link className="nav-link" aria-current="page" to="/anime">Anime</Link>
+               </Routes>                  
               </li>
+              <Outlet />
               <li className="nav-item">
-                <a className="nav-link" href="/manga">Manga</a>
+                <Link className="nav-link" to="/manga">Manga</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/community">Community</a>
@@ -45,7 +49,7 @@ const Navbars_test = () => {
             </ul>
           </div>
         </div>
-      </nav>
+    </nav>
 
   )
 }
